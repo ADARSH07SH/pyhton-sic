@@ -85,17 +85,10 @@ app.post("/grievance/status", (req, res) => {
   });
 });
 
+
+
 app.get("/login", (req, res) => {
   res.render("signin");
-});
-
-app.post("/login", (req, res) => {
-  const { username, password } = req.body;
-
-  // Implement your login logic here.
-  // For example, check username and password against database records.
-
-  res.send("Login functionality not implemented yet.");
 });
 
 app.post("/register", async (req, res) => {
@@ -113,7 +106,7 @@ app.post("/register", async (req, res) => {
       return;
     }
     console.log("User registered successfully");
-    res.send("Registration successful");
+    res.redirect("/login");
   });
 });
 
@@ -121,8 +114,8 @@ app.post("/login", (req, res) => {
   const { username, password } = req.body;
 
   // Verify user credentials
-  const sql = "SELECT * FROM user_info WHERE username = ? AND password = ?";
-  connection.query(sql, [username, password], (err, result) => {
+  const sql = "SELECT * FROM user_info WHERE username = ?";
+  connection.query(sql, [username], async (err, result) => {
     if (err) {
       console.error("Error logging in: " + err.message);
       res.status(500).send("Error logging in");
@@ -130,6 +123,14 @@ app.post("/login", (req, res) => {
     }
 
     if (result.length === 0) {
+      res.status(404).send("Invalid username or password");
+      return;
+    }
+
+    const user = result[0];
+    const passwordIsValid = await bcrypt.compare(password, user.password);
+
+    if (!passwordIsValid) {
       res.status(404).send("Invalid username or password");
       return;
     }
