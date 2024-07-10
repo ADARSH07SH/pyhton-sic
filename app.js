@@ -105,8 +105,8 @@ const responses = {
   "i want to know about horticulture": [
     '<a href="https://horticulturedir.karnataka.gov.in/" target="_blank">Horticulture Information</a>',
   ],
-  emergency: ["Call 112"],
-  more: [
+  "emergency": ["Call 112"],
+  "more": [
     '<a href="https://karnataka.gov.in/department" target="_blank">More Information</a>',
   ],
   "i need information on social justice": [
@@ -142,12 +142,98 @@ const responses = {
   "i want to know about covid-19 guidelines": [
     '<a href="https://covid19.karnataka.gov.in/" target="_blank">COVID-19 Guidelines</a>',
   ],
-  default: [
-    "Sorry, I didn't understand that.",
-    "Could you please rephrase that?",
-    "I'm not sure I follow.",
+  "how to get marriage certificate": [
+    '<a href="https://www.karnataka.gov.in/marriagecertificate" target="_blank">Get Marriage Certificate</a>',
   ],
-};
+  "where to check electricity bill": [
+    '<a href="https://bescom.karnataka.gov.in/" target="_blank">Check Electricity Bill</a>',
+  ],
+  "i need information on gst": [
+    '<a href="https://gst.karnataka.gov.in/" target="_blank">GST Information</a>',
+  ],
+  "how to apply for pan card": [
+    '<a href="https://www.incometaxindia.gov.in/" target="_blank">Apply for PAN Card</a>',
+  ],
+  "i want to know about digital locker": [
+    '<a href="https://digilocker.gov.in/" target="_blank">Digital Locker Info</a>',
+  ],
+  "where to find public distribution system information": [
+    '<a href="https://ahara.kar.nic.in/" target="_blank">Public Distribution System Info</a>',
+  ],
+  "how to get senior citizen card": [
+    '<a href="https://www.karnataka.gov.in/seniorcitizencard" target="_blank">Get Senior Citizen Card</a>',
+  ],
+  "i need to know about swachh bharat mission": [
+    '<a href="https://swachhbharatmission.gov.in/" target="_blank">Swachh Bharat Mission Info</a>',
+  ],
+  "how to register a business": [
+    '<a href="https://udyamregistration.gov.in/" target="_blank">Register a Business</a>',
+  ],
+  "i want to know about startup india": [
+    '<a href="https://www.startupindia.gov.in/" target="_blank">Startup India Info</a>',
+  ],
+  "where to find child development information": [
+    '<a href="https://wcd.nic.in/" target="_blank">Child Development Info</a>',
+  ],
+  "how to get widow pension": [
+    '<a href="https://pension.karnataka.gov.in/" target="_blank">Get Widow Pension</a>',
+  ],
+  "i need information on food safety": [
+    '<a href="https://fssai.gov.in/" target="_blank">Food Safety Info</a>',
+  ],
+  "how to apply for scholarship": [
+    '<a href="https://scholarships.gov.in/" target="_blank">Apply for Scholarship</a>',
+  ],
+  "where to find tourism information": [
+    '<a href="https://www.karnatakatourism.org/" target="_blank">Tourism Information</a>',
+  ],
+  "how to get environmental clearance": [
+    '<a href="https://environmentclearance.nic.in/" target="_blank">Get Environmental Clearance</a>',
+  ],
+  "i want to know about e-hospital": [
+    '<a href="https://ehospital.nic.in/" target="_blank">E-Hospital Info</a>',
+  ],
+  "where to find public grievances information": [
+    '<a href="https://pgportal.gov.in/" target="_blank">Public Grievances Info</a>',
+  ],
+  "how to apply for income certificate": [
+    '<a href="https://www.karnataka.gov.in/incomecertificate" target="_blank">Apply for Income Certificate</a>',
+  ],
+  "i need information on women empowerment schemes": [
+    '<a href="https://wcd.nic.in/" target="_blank">Women Empowerment Schemes Info</a>',
+  ],
+  "how to get death certificate": [
+    '<a href="https://www.karnataka.gov.in/deathcertificate" target="_blank">Get Death Certificate</a>',
+  ],
+  "where to pay property tax": [
+    '<a href="https://bbmp.gov.in/en/property-tax" target="_blank">Pay Property Tax</a>',
+  ],
+  "i need information on cyber crime": [
+    '<a href="https://cybercrime.gov.in/" target="_blank">Cyber Crime Info</a>',
+  ],
+  "how to get voter list details": [
+    '<a href="https://voterportal.eci.gov.in/" target="_blank">Get Voter List Details</a>',
+  ],
+  "i want to know about pds": [
+    '<a href="https://ahara.kar.nic.in/" target="_blank">Public Distribution System (PDS) Info</a>',
+  ],
+  "how to apply for domicile certificate": [
+    '<a href="https://www.karnataka.gov.in/domicilecertificate" target="_blank">Apply for Domicile Certificate</a>',
+  ],
+  "where to find census data": [
+    '<a href="https://censusindia.gov.in/" target="_blank">Census Data</a>',
+  ],
+  "i need information on e-governance": [
+    '<a href="https://egov.karnataka.gov.in/" target="_blank">E-Governance Info</a>',
+  ],
+  "how to get no objection certificate": [
+    '<a href="https://www.karnataka.gov.in/noc" target="_blank">Get No Objection Certificate</a>',
+  ],
+  "where to find fire safety information": [
+    '<a href="https://firesafety.karnataka.gov.in/" target="_blank">Fire Safety Info</a>',
+  ]
+}
+
 
 
 app.get("/", (req, res) => {
@@ -251,11 +337,7 @@ app.post("/login", (req, res) => {
   });
 });
 
-app.post("/get_response", (req, res) => {
-  const userInput = req.body.user_input.toLowerCase();
-  const botResponse = responses[userInput] || responses["default"];
-  res.json({ response: botResponse });
-});
+
 
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}/`);
