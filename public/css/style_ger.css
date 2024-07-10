@@ -1,0 +1,118 @@
+/* Resetting default margins and paddings */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0; /* Primary background color */
+}
+
+/* Header styles */
+header {
+    background-color: #007bff; /* Header background color */
+    color: #ffffff; /* Header text color */
+    padding: 1rem;
+    text-align: center;
+}
+
+/* Navigation styles */
+nav ul li a {
+    color: #ffffff; /* Navigation link color */
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+}
+
+nav ul li a:hover {
+    background-color: #0056b3; /* Navigation link hover color */
+}
+
+/* Container styles */
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f0f0f0; /* Container background color */
+    border: 1px solid #ccc; /* Container border */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Form styles */
+form {
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #666; /* Label text color */
+}
+
+input[type="text"],
+input[type="number"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc; /* Input border */
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+    background-color: #455260; /* Input background color */
+    color: #ffffff; /* Input text color */
+}
+
+textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+input:focus,
+input:active,
+input:valid,
+select:focus,
+select:active,
+select:valid,
+textarea:focus,
+textarea:active,
+textarea:valid {
+    background-color: #455260; /* Input focus state background color */
+    color: #ffffff; /* Input focus state text color */
+}
+
+button[type="submit"] {
+    background-color: #4CAF50; /* Submit button background color */
+    color: #ffffff; /* Submit button text color */
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button[type="submit"]:hover {
+    background-color: #45a049; /* Submit button hover background color */
+}
+
+/* Grievance status page styles */
+.status-container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f0f0f0; /* Status container background color */
+    border: 1px solid #ccc; /* Status container border */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.status-container h1 {
+    color: #333; /* Status container header text color */
+    text-align: center;
+}
+
+.status-container p {
+    margin-bottom: 10px;
+}
+
+.status-container .status {
+    font-weight: bold;
+    color: #007bff; /* Status text color */
+}
