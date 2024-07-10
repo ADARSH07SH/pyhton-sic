@@ -12,4 +12,10 @@
         function decreaseFontSize() {
             changeFontSize(-2); // Decrease font size by 2px
         }
-  
+  function increaseFontSize() {
+    document.body.style.fontSize = "larger";
+  }
+
+  function decreaseFontSize() {
+    document.body.style.fontSize = "smaller";
+  }

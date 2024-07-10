@@ -1,0 +1,20 @@
+<!-- views/grievance_status_input.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Grievance Status</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Check Grievance Status</h1>
+        <form action="/grievance/status" method="post">
+            <label for="grievanceId">Enter your Grievance ID:</label>
+            <input type="text" id="grievanceId" name="grievanceId" required>
+            <button type="submit">Check Status</button>
+        </form>
+    </div>
+</body>
+</html>
